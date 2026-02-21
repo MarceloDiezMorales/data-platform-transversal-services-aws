@@ -1,0 +1,12 @@
+Outputs:
+  StagingCatalogJobName:
+    Description: Transversal staging catalog job name
+    Value: !Ref StagingCatalogJob
+    Export:
+      Name: staging-catalog-transversal
+
+  StagingCatalogJobV2Name:
+    Description: Transversal staging catalog job name
+    Value: !Ref StagingCatalogJobV2
+    Export:
+      Name: staging-catalog-transversal-v2
