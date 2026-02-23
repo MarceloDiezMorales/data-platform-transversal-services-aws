@@ -1,0 +1,12 @@
+name: func-${self:custom.project}-${self:custom.stage}-v2
+handler: src/etl/lambda_function_v2.lambda_handler
+role: LambdaRole
+timeout: 900
+package:
+  include: 
+    - src/config/*
+    - src/utils/** 
+    - src/etl/lambda_function_v2.py
+    - src/services/**
+
+vpc: ${file(serverless-files/analytics/vpc.yml)}

@@ -1,0 +1,6 @@
+securityGroupIds:
+  - ${cf:${self:custom.integrationBaseStackName}.DefaultLambdaSecurityGroupId}
+subnetIds:
+  - ${cf:${self:custom.networkStackName}.PrivateSubnet1EC2}
+  - ${cf:${self:custom.networkStackName}.PrivateSubnet2EC2}
+  - ${cf:${self:custom.networkStackName}.PrivateSubnet3EC2} 

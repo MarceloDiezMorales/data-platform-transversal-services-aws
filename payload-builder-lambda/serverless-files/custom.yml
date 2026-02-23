@@ -1,0 +1,27 @@
+# Tags
+tagAplicativo:               ${env:tagAplicativo}
+tagArea:                     ${env:tagArea}
+tagCelula:                   ${env:tagCelula}
+tagCompania:                 ${env:tagCompania}
+tagDisponibilidad:           ${env:tagDisponibilidad}
+tagProducto:                 ${env:tagProducto}
+tagProyecto:                 ${env:tagProyecto}
+
+# Project
+stage: ${opt:stage}
+project: ${env:project}
+networkStackName: ${env:networkStackName}
+integrationBaseStackName: ${env:integrationBaseStackName}
+deploymentBucketName: ${env:deploymentBucketName}
+
+dataLakeNameStage:
+  dev:                       ${env:dataLakeNameDEV}
+  uat:                       ${env:dataLakeNameUAT}
+  pdn:                       ${env:dataLakeNamePDN}
+dataLakeName:                ${self:custom.dataLakeNameStage.${self:custom.stage}}
+
+kmsARNStage:
+  dev:                       ${env:kmsArnDEV}
+  uat:                       ${env:kmsArnUAT}
+  pdn:                       ${env:kmsArnPDN}
+kmsARN:                      ${self:custom.kmsARNStage.${self:custom.stage}}

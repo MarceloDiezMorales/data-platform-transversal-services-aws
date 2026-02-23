@@ -1,0 +1,17 @@
+name: aws
+stage: ${self:custom.stage}
+runtime: python3.11
+lambdaHashingVersion: 20201221
+deploymentBucket:
+  name: ${self:custom.deploymentBucketName}
+  maxPreviousDeploymentArtifacts: 10
+stackTags:
+  Ambiente: ${self:custom.stage}
+  Aplicativo: ${self:custom.tagAplicativo}
+  Area: ${self:custom.tagArea}
+  Celula: ${self:custom.tagCelula}
+  Compania: ${self:custom.tagCompania}
+  Despliegue: ServerlessFramework
+  Disponibilidad: ${self:custom.tagDisponibilidad}
+  Producto: ${self:custom.tagProducto}
+  Proyecto: ${self:custom.tagProyecto}
