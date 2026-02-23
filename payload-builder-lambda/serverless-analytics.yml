@@ -1,0 +1,25 @@
+service: ${self:custom.project}-service
+frameworkVersion: "3"
+useDotenv: true
+
+provider: ${file(./serverless-files/analytics/provider.yml)}
+    
+custom: ${file(./serverless-files/analytics/custom.yml)}
+
+package:
+  individually: true
+  exclude:
+    - ./**
+
+plugins:
+  - serverless-python-requirements
+  - serverless-plugin-common-excludes
+
+functions:
+  PayloadBuilderV2: ${file(./serverless-files/analytics/functions/payload_builder_v2.yml)}
+
+resources:
+  # ****************** Roles ******************
+  - ${file(./serverless-files/analytics/resources/roles.yml)}
+  # ****************** Outputs ******************
+  - ${file(./serverless-files/analytics/resources/outputs.yml)}

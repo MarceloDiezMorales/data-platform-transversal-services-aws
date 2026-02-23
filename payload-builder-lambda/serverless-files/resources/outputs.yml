@@ -1,0 +1,8 @@
+Outputs:
+  LambdaFunctionARN:
+    Description: ARN of Notification Lambda function
+    Value: !GetAtt PayloadBuilderLambdaFunction.Arn
+
+  LambdaFunctionV2ARN:
+    Description: ARN of Notification Lambda function
+    Value: !GetAtt PayloadBuilderV2LambdaFunction.Arn
